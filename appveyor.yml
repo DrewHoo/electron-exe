@@ -14,7 +14,22 @@ build_script:
   - yarn run dist
 
 artifacts:
-  - path: dist
-    name: electron-exe
+- path: dist
+  name: electron-exe
+
+deploy:
+  release: myproduct-v$(appveyor_build_version)
+  description: 'Release description'
+  provider: GitHub
+  auth_token:
+    secure: MufU9ypqr7QjF0tWLf+hDRS2VylGC3BlMCEWgilebj9DIOP38KbJAKrFBdXYVRiS
+  artifact: electron-exe
+  draft: false
+  prerelease: false
+  on:
+    branch: master                 # release from master branch only
+    appveyor_repo_tag: true        # deploy on tag push only
+
+
 
 test: off
