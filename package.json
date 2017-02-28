@@ -1,13 +1,13 @@
 {
   "name": "electron-exe",
   "version": "0.1.0",
+  "author": "DrewHoo",
   "scripts": {
-    "build-win32": "electron-packager --platform=win32 ."
+    "dist": "build"
   },
-  "dependencies": {
-    "electron": "^1.4.15"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "electron-packager": "^8.5.1"
+    "electron": "^1.4.15",
+    "electron-builder": "^14.5.2"
   }
 }

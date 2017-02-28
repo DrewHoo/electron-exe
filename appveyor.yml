@@ -1,0 +1,20 @@
+version: 0.1.{build}
+
+platform:
+  - x64
+
+init:
+  - git config --global core.autocrlf input #converts line endings to be windows-friendly in CI
+
+install:
+  - ps: Install-Product node 7 x64
+  - yarn install
+
+build_script:
+  - yarn run dist
+
+artifacts:
+  - path: dist
+    name: electron-exe
+
+test: off
